@@ -280,7 +280,7 @@ app.post('/pets', upload.single('pet_image'), isLoggedIn, (req, res) => {
 
 // View All Journals
 app.get('/journals', isLoggedIn, (req, res) => {
-  const userId = req.session.user.id;
+  const userId = req.session.user.id; //Comes from the session of the logged-in user
   let selectedPetId = req.query.petId;
 
   // Get all pets of this user
