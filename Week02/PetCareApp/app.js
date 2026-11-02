@@ -7,6 +7,14 @@ const PORT = 3000;
 
 app.use(flash());
 
+// MySQL Connection
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'RP_Cute17239@',
+  database: 'petcare'
+});
+
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
