@@ -2,7 +2,7 @@
 const express = require('express');
 const session = require('express-session');
 const flash = require('connect-flash');
-const mysql = require('mysql2');
+
 const app = express();
 const PORT = 3000;
 
@@ -10,6 +10,7 @@ const PORT = 3000;
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
+
 
 app.use(session({
   secret: 'secret123',
@@ -21,12 +22,13 @@ app.use(flash());
 
 
 // Routes
-app.use(require('./routes/indexRoutes'));
-app.use(require('./routes/authRoutes'));
-app.use(require('./routes/adminRoutes'));
-app.use(require('./routes/petRoutes'));
-app.use(require('./routes/journalRoutes'));
+//app.use(require('./routes/indexRoutes'));
+//app.use(require('./routes/authRoutes'));
+//app.use(require('./routes/adminRoutes'));
+//app.use(require('./routes/petRoutes'));
+//app.use(require('./routes/journalRoutes'));
 app.use(require('./routes/paymentRoutes'));
+
 
 
 // =========================
